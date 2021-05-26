@@ -5,6 +5,7 @@ class DogProf extends React.Component {
         return (
             <div>
                 <h1>DogProf Component</h1>
+                <p>{this.props.dog.name}</p>
             </div>
         )
     }
