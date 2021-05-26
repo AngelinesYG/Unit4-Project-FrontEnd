@@ -23,22 +23,23 @@ class App extends React.Component {
     dogs: [],
   }
 
+  addDog = (dog) => {
+     console.log(dog)
+    axios
+    .post('https://bingo-was-his-django.herokuapp.com/api/dogs', dog)
+    .then((response) => {
+      console.log('.then triggered')
+      console.log(response)
+      this.getDog()
+    })
+    .catch((error) => console.error(error))
+  }
+
   handleChange = (event) => {
     this.setState ({
       [event.target.id]: event.target.value,
     })
   }
-
-
-
-  addDog = (dog) => {
-    axios
-    .post('https://bingo-was-his-django.herokuapp.com/api/dogs', dog)
-    .then((response) => {
-      this.getDogs()
-    })
-  }
-
 
   getDogs = () => {
     axios
@@ -50,10 +51,6 @@ class App extends React.Component {
         (err) => console.log(err)
       )
       .catch((error) => console.log(error))
-  }
-
-  componentDidMount = () => {
-    this.getDogs()
   }
 
   deleteDog = (event) => {
@@ -72,16 +69,18 @@ class App extends React.Component {
     })
   }
 
+   componentDidMount = () => {
+    this.getDogs()
+   }
+
     render() {
         return (
             <div className="main-container">
                 <Nav />
-                <HeroArea
-                  addDog={this.addDog}/>
+                <HeroArea addDog={this.addDog}/>
                 {this.state.dogs.map((dog) => {
                   return(
-                    <DogProf
-                      dog={dog}
+                    <DogProf dog={dog}
                       updateDog={this.updateDog}
                       deleteDog={this.deleteDog}
                       handleChange={this.handleChange}
