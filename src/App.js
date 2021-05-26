@@ -1,17 +1,4 @@
 import React from 'react'
-<<<<<<< HEAD
-import axios from 'axios'
-import 
-
-class App extends React.Component {
-  render = () => {
-    return (
-      <div>
-        <h1>Hello</h1>
-      </div>
-    )
-  }
-=======
 
 import Nav from './components/Nav'
 import HeroArea from './components/HeroArea'
@@ -33,7 +20,6 @@ class App extends React.Component {
             </div>
         )
     }
->>>>>>> baca3573c21952169083113f587c3fd2ce795c45
 }
 
 export default App
