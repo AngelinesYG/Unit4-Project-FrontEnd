@@ -30,16 +30,29 @@ class App extends React.Component {
     .then((response) => {
       console.log('.then triggered')
       console.log(response)
-      this.getDog()
+      this.getDogs()
     })
     .catch((error) => console.error(error))
   }
 
+  // handleChange = (event) => {
+  //   this.setState ({
+  //     [event.target.id]: event.target.value,
+  //   })
+  // }
+
   handleChange = (event) => {
-    this.setState ({
-      [event.target.id]: event.target.value,
-    })
-  }
+    if (event.target.id === "favGames") {
+        this.setState({
+            favGames: event.target.value.split(',')
+        })
+    }
+    else {
+        this.setState({
+            [event.target.id]: event.target.value
+        })
+    }
+}
 
   getDogs = () => {
     axios
@@ -54,7 +67,7 @@ class App extends React.Component {
   }
 
   deleteDog = (event) => {
-    axios.delete('https://bingo-was-his-django.herokuapp.com/api/dogs' + event.target.value).then((response) => {
+    axios.delete('https://bingo-was-his-django.herokuapp.com/api/dogs/' + event.target.value).then((response) => {
       this.getDogs()
     })
   }
@@ -63,7 +76,7 @@ class App extends React.Component {
     event.preventDefault()
     const id = event.target.id
     axios
-    .put('https://bingo-was-his-django.herokuapp.com/api/dogs' + id, this.state)
+    .put('https://bingo-was-his-django.herokuapp.com/api/dogs/' + id, this.state)
     .then((response) => {
       this.getDogs()
     })
