@@ -43,6 +43,7 @@ class DogProf extends React.Component {
             Bye!
             </button>
               </div>
+
             </div>
         )
     }
