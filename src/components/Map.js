@@ -53,6 +53,3 @@ class Map extends React.Component {
 }
 
 export default Map
-
-// <iframe width="560" height="315" title="Dog Park Map" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBT9_mprou4lCaUHTuQNhvRCNM8hyim7LE
-// &q={this.state.zipcode}"></iframe>

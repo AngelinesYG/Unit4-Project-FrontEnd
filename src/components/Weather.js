@@ -16,18 +16,6 @@ class Weather extends React.Component {
       [event.target.id]: event.target.value,
     })
   }
-  // handleChange = (event) => {
-  //     if (event.target.id === "favGames") {
-  //         this.setState({
-  //             favGames: event.target.value.split(',')
-  //         })
-  //     }
-  //     else {
-  //         this.setState({
-  //             [event.target.id]: event.target.value
-  //         })
-  //     }
-  //   }
 
   getWeather = (event) => {
     event.preventDefault();
