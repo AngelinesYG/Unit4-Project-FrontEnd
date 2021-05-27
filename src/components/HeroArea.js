@@ -30,11 +30,18 @@ class HeroArea extends React.Component {
     this.props.addDog(this.state)
   }
 
+  showForm = () => {
+      const addForm = document.querySelector('.addForm')
+      console.log(addForm);
+      addForm.classList.toggle('visible')
+  }
+
     render(){
         return (
-            <div>
-                <h1>Add Your New Best Friend!</h1>
-                <form onSubmit={this.handleSubmit}>
+            <div className="heroarea-container">
+                <h1>Welcome to bingo!</h1>
+                <button onClick={this.showForm}>add your bff</button>
+                <form className="addForm" onSubmit={this.handleSubmit}>
                   <label htmlFor="name">Name:</label>
                   <input
                       type="text"

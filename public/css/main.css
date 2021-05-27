@@ -1,5 +1,48 @@
+/*=========================================================
+====================== GLOBAL STYLES ====================*/
+:root {
+    --lightgray: #F6F3F0;
+    --mistblue: #CADBD7;
+    --mint: #9AB6B1;
+    --brick: #AF4B43;
+    --darkgray: #333941;
+    --sunrise: #E6B689;
+}
+
 body {
-    background: pink;
+    background: var(--lightgray);
+    color: var(--darkgray);
+    font-family: "Gudea";
+    font-size: 16px;
+}
+
+.main-container {
+    width: 90%;
+    margin: auto;
+}
+
+h1, h2, h3, h4 {
+    font-family: "Yeseva One";
+}
+
+img {
+    width: 350px;
+    height: auto;
+}
+
+button, input[type="submit"] {
+    font-family: "Gudea";
+    font-size: 1em;
+    color: var(--darkgray);
+    background: var(--mistblue);
+    outline: none;
+    border: 1px dotted var(--brick);
+    padding: 5px 10px;
+    transition: .3s ease-in-out;
+}
+
+button:hover, input[type="submit"]:hover {
+    background: var(--sunrise);
 }
 
 /*=========================================================
@@ -7,12 +50,73 @@ body {
 
 /*----- Every element in this section should begin with '.nav-container' -----*/
 
+.nav-container nav {
+    background: var(--mistblue);
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
 
+.nav-container h1 {
+    color: var(--brick);
+}
+
+.nav-container ul {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 0;
+}
+
+.nav-container a {
+    margin: 10px;
+    transition: .2s;
+    text-decoration: none;
+    color: var(--darkgray);
+}
+
+.nav-container a:hover {
+    color: var(--sunrise);
+    cursor: pointer;
+}
 
 /*=========================================================
 ================== HEROAREA COMPONENT CSS ================*/
 
 /*----- Every element in this section should begin with '.heroarea-container' -----*/
+
+.heroarea-container {
+    height: 400px;
+    margin-bottom: 40px;
+    /* Photoshop this photo to be opaque? */
+    background: url("https://images.unsplash.com/photo-1546689999-e1db7c13ef06?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTV8fGRvZ3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.heroarea-container h1 {
+    margin-left: 50px;
+}
+
+.heroarea-container button {
+    width: 120px;
+    height: 50px;
+    margin-left: 50px;
+}
+
+.addForm {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
 
 
 /*=========================================================
@@ -20,6 +124,36 @@ body {
 
 /*----- Every element in this section should begin with '.dogprof-container' -----*/
 
+.dogs-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.dog-container article {
+    width: 30%;
+    max-width: 300px;
+    padding: 20px;
+}
+
+.dog-container section {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.intro-text {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dog-intro img {
+    width: 50vmin;
+    height: 50vmin;
+    min-width: 200px;
+    min-height: 200px;
+    object-fit: cover;
+}
 
 /*=========================================================
 ================== WEATHER COMPONENT CSS =================*/
@@ -38,3 +172,60 @@ body {
 ==================== FOOTER COMPONENT CSS ==================*/
 
 /*----- Every element in this section should begin with '.footer-container' -----*/
+
+.footer-container {
+    background: var(--mistblue);
+    padding: 10px;
+    text-align: center;
+}
+
+.footer-container ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    justify-content: space-between;
+    padding-left: 0;
+}
+
+.footer-container li {
+    text-align: center;
+}
+
+.footer-container i {
+    margin: 0px 10px;
+    color: var(--brick);
+    font-size: 1.5em;
+    transition: .3s ease-in-out;
+}
+
+.footer-container i:hover {
+    color: var(--sunrise);
+}
+
+
+
+/*==================================================
+================== TABLET STYLES =================*/
+
+@media only screen and (min-width: 768px) {
+
+/*========= TABLET - NAV ===========*/
+
+    .nav-container nav {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav-container ul {
+        flex-direction: row;
+    }
+
+/*======== TABLET - FOOTER =========*/
+    .footer-container ul {
+        flex-direction: row;
+    }
+
+    .footer-container li {
+        width: 200px;
+    }
+}
