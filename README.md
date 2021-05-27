@@ -5,6 +5,15 @@ Angelines Yaport-Garcia
 Chris Nugroho
 Clare Eisentrout
 
+## https://dry-cove-26271.herokuapp.com/
+
+*TECH STACK
+=================
+- Python / Django Back End
+- PostgreSQL
+- React App Front End
+- Custom CSS 
+
 *WORK FLOW
 =================
 We began our workflow by brainstorming ideas and possible strategies.
