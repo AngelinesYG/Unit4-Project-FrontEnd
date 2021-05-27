@@ -166,7 +166,13 @@ button:hover, input[type="submit"]:hover {
 
 /*----- Every element in this section should begin with '.map-container' -----*/
 
+/* .map {
+    display: none;
+}
 
+.visible {
+    display: block;
+} */
 
 /*=========================================================
 ==================== FOOTER COMPONENT CSS ==================*/
