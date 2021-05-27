@@ -105,7 +105,8 @@ class App extends React.Component {
                     })}
                 </div>
                 <Weather
-                    id="weather"/>
+                    id="weather"
+                    handleChange={this.handleChange}/>
                 <Map
                     id="map"/>
                 <Footer />
