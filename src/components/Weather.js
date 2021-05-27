@@ -4,12 +4,30 @@ import axios from 'axios'
 class Weather extends React.Component {
 
   state = {
-      zipcode: '48103',
+      zipcode: '',
       name: '',
       weatherLike: '',
       humidity: '',
       skies: ''
   }
+
+  handleChange = (event) => {
+    this.setState ({
+      [event.target.id]: event.target.value,
+    })
+  }
+  // handleChange = (event) => {
+  //     if (event.target.id === "favGames") {
+  //         this.setState({
+  //             favGames: event.target.value.split(',')
+  //         })
+  //     }
+  //     else {
+  //         this.setState({
+  //             [event.target.id]: event.target.value
+  //         })
+  //     }
+  //   }
 
   getWeather = (event) => {
     event.preventDefault();
@@ -22,7 +40,8 @@ class Weather extends React.Component {
              this.setState({
                 weatherLike: temp,
                 humidity: response.data.main.humidity,
-                skies: response.data
+                skies: response.data.weather[0].description,
+                city: response.data.name
             })
         }
       )
@@ -34,12 +53,14 @@ class Weather extends React.Component {
                 <h1>Weather Component</h1>
                 <summary> Wheather Check </summary>
             <form onSubmit={this.getWeather}>
-                <input type="text" id="zipcode" onChange={this.props.handleChange}/><br/>
-                <input type="submit" value = "City Destination" />
+                <input type="text" id="zipcode" onChange={this.handleChange}/><br/>
+                <input type="submit" value = "Enter ZipCode!" />
             </form>
             <dl>
-                <dt> City Name: </dt>
-                <dd>{this.state.name}</dd>
+                <dt> City: </dt>
+                <dd>{this.state.city}</dd>
+                <dt> Current Sky: </dt>
+                <dd>{this.state.skies}</dd>
                 <dt> Temperature: </dt>
                 <dd>{this.state.weatherLike}</dd>
                 <dt> Humidity: </dt>
