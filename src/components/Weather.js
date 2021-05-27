@@ -59,7 +59,7 @@ class Weather extends React.Component {
             <dl>
                 <dt> City: </dt>
                 <dd>{this.state.city}</dd>
-                <dt> Current Sky: </dt>
+                <dt> Current Condition: </dt>
                 <dd>{this.state.skies}</dd>
                 <dt> Temperature: </dt>
                 <dd>{this.state.weatherLike}</dd>
