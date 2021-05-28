@@ -14,6 +14,7 @@ body {
     color: var(--darkgray);
     font-family: "Gudea";
     font-size: 16px;
+    box-sizing: border-box;
 }
 
 .main-container {
@@ -39,6 +40,10 @@ button, input[type="submit"] {
     border: 1px dotted var(--brick);
     padding: 5px 10px;
     transition: .3s ease-in-out;
+}
+
+input[type="text"] {
+    font-family: 'Gudea';
 }
 
 button:hover, input[type="submit"]:hover {
@@ -90,18 +95,22 @@ button:hover, input[type="submit"]:hover {
 /*----- Every element in this section should begin with '.heroarea-container' -----*/
 
 .heroarea-container {
-    height: 400px;
+    min-height: 400px;
     margin-bottom: 40px;
-    /* Photoshop this photo to be opaque? */
     background: url("https://images.unsplash.com/photo-1546689999-e1db7c13ef06?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTV8fGRvZ3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60");
+    background-position: center;
     background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
 }
 
 .heroarea-container h1 {
     margin-left: 50px;
+    color: var(--sunrise);
+    text-shadow: 1px 1px 2px var(--brick);
+    letter-spacing: .1em;
 }
 
 .heroarea-container button {
@@ -112,6 +121,26 @@ button:hover, input[type="submit"]:hover {
 
 .addForm {
     display: none;
+    margin: 15px 0px 15px 50px;
+}
+
+.addForm label {
+    width: 100px;
+}
+
+.heroarea-container form {
+    background-color: #e6b689cc;
+    padding: 15px;
+    width: 250px;
+    text-align: center;
+}
+
+.heroarea-container label {
+    color: var(--darkgray);
+}
+
+.addForm input[type="text"] {
+    margin: 5px auto;
 }
 
 .visible {
@@ -124,19 +153,19 @@ button:hover, input[type="submit"]:hover {
 
 /*----- Every element in this section should begin with '.dogprof-container' -----*/
 
-.dogs-container {
+.dogprof-container {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
 }
 
-.dog-container article {
+.dogprof-container article {
     width: 30%;
     max-width: 300px;
     padding: 20px;
 }
 
-.dog-container section {
+.dogprof-container section {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -148,8 +177,8 @@ button:hover, input[type="submit"]:hover {
 }
 
 .dog-intro img {
-    width: 50vmin;
-    height: 50vmin;
+    width: 40vmin;
+    height: 40vmin;
     min-width: 200px;
     min-height: 200px;
     object-fit: cover;
@@ -160,6 +189,51 @@ button:hover, input[type="submit"]:hover {
 
 /*----- Every element in this section should begin with '.weater-container' -----*/
 
+.weather-container {
+    text-align: center;
+    margin: 50px auto;
+    background: #e6b6894f;
+    border: 2px solid var(--mint);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.weather-container input {
+    min-width: 200px;
+    margin: 5px auto;
+}
+
+.weather-container input[type="text"] {
+    border: 1px solid var(--brick);
+    outline-color: var(--sunrise);
+    height: 25px;
+}
+
+.weather-container h2 {
+    margin-top: 0;
+}
+
+.weather-container h3 {
+    color: var(--brick);
+}
+
+.weather-container section {
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard {
+    border: 2px solid var(--mint);
+    border-radius: 10px;
+    background: #E5E8E0;
+    padding: 10px;
+    margin: 10px;
+}
+
+.dashboard h3 {
+    font-family: "Gudea";
+    color: var(--brick);
+}
 
 /*=========================================================
 ==================== MAP COMPONENT CSS ==================*/
@@ -224,6 +298,32 @@ button:hover, input[type="submit"]:hover {
 
     .nav-container ul {
         flex-direction: row;
+    }
+
+/*========= TABLET - HERO AREA ===========*/
+
+    .heroarea-container {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        background: url("https://images.unsplash.com/photo-1546689999-e1db7c13ef06?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTV8fGRvZ3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60");
+        background-size: cover;
+    }
+
+
+    .heroarea-container form {
+        margin-left: 20%;
+    }
+
+/*======== TABLET - WEATHER =========*/
+
+    .weather-container section {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .dashboard {
+        width: 25%;
     }
 
 /*======== TABLET - FOOTER =========*/

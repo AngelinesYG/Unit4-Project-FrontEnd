@@ -49,7 +49,7 @@ class Weather extends React.Component {
     render() {
       if (this.state.city === "") {
         return (
-            <div className ="Weather">
+            <div className ="weather-container">
                 <h2> Local Weather </h2>
                 <form onSubmit={this.getWeather}>
                     <input type="text" id="zipcode" onChange={this.handleChange}/><br/>
@@ -60,7 +60,7 @@ class Weather extends React.Component {
       }
       else {
         return (
-          <div className ="Weather">
+          <div className ="weather-container">
               <h2> Local Weather </h2>
               <form onSubmit={this.getWeather}>
                   <input type="text" id="zipcode" onChange={this.handleChange}/><br/>
@@ -68,17 +68,17 @@ class Weather extends React.Component {
               </form>
               <h3>The weather in {this.state.city} looks like:</h3>
               <section>
-                <div>
+                <div className="dashboard">
                   <h5>Condition:</h5>
                   <h3>{this.state.skies}</h3>
                 </div>
-                <div>
+                <div className="dashboard">
                   <h5>Temperature:</h5>
-                  <h3>{this.state.weatherLike}</h3>
+                  <h3>{this.state.weatherLike}°</h3>
                 </div>
-                <div>
+                <div className="dashboard">
                   <h5>Humidity:</h5>
-                  <h3>{this.state.humidity}</h3>
+                  <h3>{this.state.humidity}%</h3>
                 </div>
               </section>
           </div>
