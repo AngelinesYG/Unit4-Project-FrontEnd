@@ -12,7 +12,7 @@ Clare Eisentrout
 - Python / Django Back End
 - PostgreSQL
 - React App Front End
-- Custom CSS 
+- Flexbox, Responsive CSS 
 
 *WORK FLOW
 =================

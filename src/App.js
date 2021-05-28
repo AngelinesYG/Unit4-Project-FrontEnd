@@ -6,7 +6,7 @@ import Nav from './components/Nav'
 import HeroArea from './components/HeroArea'
 import DogProf from './components/DogProf'
 import Weather from './components/Weather'
-import Map from './components/Map'
+import MapContainer from './components/Map'
 import Footer from './components/Footer'
 
 
@@ -107,7 +107,7 @@ class App extends React.Component {
                 <Weather
                     id="weather"
                     handleChange={this.handleChange}/>
-                <Map
+                <MapContainer
                     id="map"
                     handleChange={this.handleChange}/>
                 <Footer />
