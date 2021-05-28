@@ -1,27 +1,27 @@
 /*====================== react-map-gl attempt =====================*/
 
-import React, { useState } from 'react'
-import ReactMapGl from "react-map-gl"
-
-export default function MapContainer() {
-    const [viewport, setViewport] = useState(
-        {
-            latitude: 42.361145,
-            longitude: -71.057083,
-            width: '100vw',
-            height: '100vh',
-            zoom: 10
-        }
-    )
-
-    return <div>
-        <ReactMapGl
-            {...viewport}
-            mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}>
-            markers here
-        </ReactMapGl>
-    </div>
-}
+// import React, { useState } from 'react'
+// import ReactMapGl from "react-map-gl"
+//
+// export default function MapContainer() {
+//     const [viewport, setViewport] = useState(
+//         {
+//             latitude: 42.361145,
+//             longitude: -71.057083,
+//             width: '100vw',
+//             height: '100vh',
+//             zoom: 10
+//         }
+//     )
+//
+//     return <div>
+//         <ReactMapGl
+//             {...viewport}
+//             mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}>
+//             markers here
+//         </ReactMapGl>
+//     </div>
+// }
 
 
 

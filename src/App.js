@@ -109,7 +109,8 @@ class App extends React.Component {
                     handleChange={this.handleChange}/>
                 <MapContainer
                     id="map"
-                    handleChange={this.handleChange}/>
+                    handleChange={this.handleChange}
+                    />
                 <Footer />
             </div>
         )
