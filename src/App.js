@@ -107,9 +107,6 @@ class App extends React.Component {
                 <Weather
                     id="weather"
                     handleChange={this.handleChange}/>
-                <Map
-                    id="map"
-                    handleChange={this.handleChange}/>
                 <Footer />
             </div>
         )
@@ -117,3 +114,7 @@ class App extends React.Component {
 }
 
 export default App
+
+// <Map
+//     id="map"
+//     handleChange={this.handleChange}/>
