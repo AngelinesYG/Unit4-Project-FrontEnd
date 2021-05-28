@@ -32,17 +32,18 @@ class HeroArea extends React.Component {
 
   showForm = () => {
       const addForm = document.querySelector('.addForm')
-      console.log(addForm);
       addForm.classList.toggle('visible')
   }
 
     render(){
         return (
-            <div className="heroarea-container">
-                <h1>Welcome to bingo!</h1>
-                <button onClick={this.showForm}>add your bff</button>
+            <div className="heroarea-container" onClick={this.showForm}>
+                <div className="welcome-text">
+                    <h1>Welcome to bingo!</h1>
+                    <button>add your bff</button>
+                </div>
                 <form className="addForm" onSubmit={this.handleSubmit}>
-                  <label htmlFor="name">Name:</label>
+                  <label htmlFor="name">Name:</label><br />
                   <input
                       type="text"
                       id="name"
@@ -50,7 +51,7 @@ class HeroArea extends React.Component {
                       onChange={this.handleChange}
                   />
                   <br />
-                  <label htmlFor="image">Image:</label>
+                  <label htmlFor="image">Image:</label><br />
                   <input
                       type="text"
                       id="image"
@@ -58,7 +59,7 @@ class HeroArea extends React.Component {
                       onChange={this.handleChange}
                   />
                   <br />
-                  <label htmlFor="age">Age:</label>
+                  <label htmlFor="age">Age:</label><br />
                   <input
                       type="text"
                       id="age"
@@ -66,7 +67,7 @@ class HeroArea extends React.Component {
                       onChange={this.handleChange}
                   />
                   <br />
-                  <label htmlFor="breed">Breed:</label>
+                  <label htmlFor="breed">Breed:</label><br />
                   <input
                       type="text"
                       id="breed"
@@ -74,7 +75,7 @@ class HeroArea extends React.Component {
                       onChange={this.handleChange}
                   />
                   <br />
-                  <label htmlFor="human">Human:</label>
+                  <label htmlFor="human">Human:</label><br />
                   <input
                       type="text"
                       id="human"
@@ -82,7 +83,7 @@ class HeroArea extends React.Component {
                       onChange={this.handleChange}
                   />
                   <br />
-                  <label htmlFor="zipcode">Zipcode:</label>
+                  <label htmlFor="zipcode">Zipcode:</label><br />
                   <input
                       type="text"
                       id="zipcode"
@@ -90,7 +91,7 @@ class HeroArea extends React.Component {
                       onChange={this.handleChange}
                   />
                   <br />
-                  <label htmlFor="favGames">favGames:</label>
+                  <label htmlFor="favGames">favGames:</label><br />
                   <input
                       type="text"
                       id="favGames"
