@@ -5,7 +5,7 @@ class Weather extends React.Component {
 
   state = {
       zipcode: '',
-      name: '',
+      city: '',
       weatherLike: '',
       humidity: '',
       skies: ''
@@ -36,27 +36,43 @@ class Weather extends React.Component {
     }
 
     render() {
+      if (this.state.city === "") {
         return (
             <div className ="Weather">
-                <h1>Weather Component</h1>
-                <summary> Wheather Check </summary>
-            <form onSubmit={this.getWeather}>
-                <input type="text" id="zipcode" onChange={this.handleChange}/><br/>
-                <input type="submit" value = "Enter ZipCode!" />
-            </form>
-            <dl>
-                <dt> City: </dt>
-                <dd>{this.state.city}</dd>
-                <dt> Current Condition: </dt>
-                <dd>{this.state.skies}</dd>
-                <dt> Temperature: </dt>
-                <dd>{this.state.weatherLike}</dd>
-                <dt> Humidity: </dt>
-                <dd>{this.state.humidity}</dd>
-            </dl>
+                <h2> Local Weather </h2>
+                <form onSubmit={this.getWeather}>
+                    <input type="text" id="zipcode" onChange={this.handleChange}/><br/>
+                    <input type="submit" value = "Enter ZipCode!" />
+                </form>
             </div>
         )
+      }
+      else {
+        return (
+          <div className ="Weather">
+              <h2> Local Weather </h2>
+              <form onSubmit={this.getWeather}>
+                  <input type="text" id="zipcode" onChange={this.handleChange}/><br/>
+                  <input type="submit" value = "Enter ZipCode!" />
+              </form>
+              <h3>The weather in {this.state.city} looks like:</h3>
+              <section>
+                <div>
+                  <h5>Condition:</h5>
+                  <h3>{this.state.skies}</h3>
+                </div>
+                <div>
+                  <h5>Temperature:</h5>
+                  <h3>{this.state.weatherLike}</h3>
+                </div>
+                <div>
+                  <h5>Humidity:</h5>
+                  <h3>{this.state.humidity}</h3>
+                </div>
+              </section>
+          </div>
+        )
+      }
     }
 }
-
 export default Weather
