@@ -1,74 +1,106 @@
-import React, { Component } from 'react'
-import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react'
-// import axios from 'axios'
+/*====================== react-map-gl attempt =====================*/
 
-const mapStyles = {
-  width: '90%',
-  height: '60%'
-};
+import React, { useState } from 'react'
+import ReactMapGl from "react-map-gl"
 
-export class MapContainer extends Component {
-    state = {
-        showingInfoWindow: false,
-        activeMarker: {},
-        selectedPlace: {}
-    }
-
-    onMarkerClick = (props, marker, e) => {
-        this.setState(
-            {
-                selectedPlace: props,
-                activeMarker: marker,
-                showingInfoWindow: true
-            }
-        )
-    }
-
-    onClose = (props) => {
-        if (this.state.showingInfoWindow) {
-            this.setState(
-                {
-                    showingInfoWindow: false,
-                    activeMarker: null
-                }
-            )
+export default function MapContainer() {
+    const [viewport, setViewport] = useState(
+        {
+            latitude: 42.361145,
+            longitude: -71.057083,
+            width: '100vw',
+            height: '100vh',
+            zoom: 10
         }
-    }
+    )
 
-    render() {
-        return (
-            <Map
-                google={this.props.google}
-                // zoom={14}
-                style={mapStyles}
-                initialCenter={
-                    {
-                        lat: 42.3601,
-                        lng: -71.0589
-                    }
-                }
-            >
-                <Marker
-                    onClick={this.onMarkerClick}
-                    name={'Boston, MA'}
-                />
-                <InfoWindow
-                    marker={this.state.activeMarker}
-                    visible={this.state.showingInfoWindow}
-                    onClose={this.onClose}
-                >
-                    <div>
-                        <h4>{this.state.selectedPlace.name}</h4>
-                    </div>
-                </InfoWindow>
-            </Map>
-        )
-    }
+    return <div>
+        <ReactMapGl
+            {...viewport}
+            mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}>
+            markers here
+        </ReactMapGl>
+    </div>
 }
 
-export default GoogleApiWrapper({
-    apiKey: "AIzaSyBFvU905wVMfSfWkWW1_8xOGAe-SX-Ea3A"
-})(MapContainer);
+
+
+/*====================== react-google-maps attempt =====================*/
+
+// import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react'
+// // import axios from 'axios'
+//
+// const mapStyles = {
+//   width: '90%',
+//   height: '60%'
+// };
+//
+// export class MapContainer extends Component {
+//     state = {
+//         showingInfoWindow: false,
+//         activeMarker: {},
+//         selectedPlace: {}
+//     }
+//
+//     onMarkerClick = (props, marker, e) => {
+//         this.setState(
+//             {
+//                 selectedPlace: props,
+//                 activeMarker: marker,
+//                 showingInfoWindow: true
+//             }
+//         )
+//     }
+//
+//     onClose = (props) => {
+//         if (this.state.showingInfoWindow) {
+//             this.setState(
+//                 {
+//                     showingInfoWindow: false,
+//                     activeMarker: null
+//                 }
+//             )
+//         }
+//     }
+//
+//     render() {
+//         return (
+//             <Map
+//                 google={this.props.google}
+//                 zoom={14}
+//                 style={mapStyles}
+//                 initialCenter={
+//                     {
+//                         lat: 42.3601,
+//                         lng: -71.0589
+//                     }
+//                 }
+//             >
+//                 <Marker
+//                     onClick={this.onMarkerClick}
+//                     name={'Boston, MA'}
+//                 />
+//                 <InfoWindow
+//                     marker={this.state.activeMarker}
+//                     visible={this.state.showingInfoWindow}
+//                     onClose={this.onClose}
+//                 >
+//                     <div>
+//                         <h4>{this.state.selectedPlace.name}</h4>
+//                     </div>
+//                 </InfoWindow>
+//             </Map>
+//         )
+//     }
+// }
+//
+// export default GoogleApiWrapper({
+//     apiKey: "AIzaSyBFvU905wVMfSfWkWW1_8xOGAe-SX-Ea3A"
+// })(MapContainer);
+
+
+
+/*====================== google maps embed API attempt =====================*/
 
 // class Map extends React.Component {
 //     state = {
