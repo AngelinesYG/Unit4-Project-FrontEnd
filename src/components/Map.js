@@ -1,4 +1,5 @@
 /*====================== react-map-gl attempt =====================*/
+/* video tutorial: https://www.youtube.com/watch?v=JJatzkPcmoI */
 
 import React, { useState } from 'react'
 import ReactMapGl from "react-map-gl"
@@ -8,7 +9,7 @@ export default function MapContainer() {
         {
             latitude: 42.361145,
             longitude: -71.057083,
-            width: '100vw',
+            width: '89vw',
             height: '100vh',
             zoom: 10
         }
@@ -17,7 +18,12 @@ export default function MapContainer() {
     return <div>
         <ReactMapGl
             {...viewport}
-            mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}>
+            mapboxApiAccessToken="pk.eyJ1IjoiY2hlaXNlbnRyb3V0IiwiYSI6ImNrcDhmMTBxZjA2Mm4yb25yY2syZGUwYjkifQ.yI_yCIEk17ky3XHOdWQOgg"
+            mapStyle="mapbox://styles/cheisentrout/ckp8h9dgj1zde18low6azf99y"
+            onViewportChange={viewport => {
+                setViewport(viewport);
+            }}
+            >
             markers here
         </ReactMapGl>
     </div>
