@@ -31,20 +31,31 @@ class Weather extends React.Component {
 
   getWeather = (event) => {
     event.preventDefault();
-    axios
-    .get("https://api.openweathermap.org/data/2.5/weather?zip="+this.state.zipcode+"&appid=cb62c3b0bbf4bc98a92507bb71fa55d5&units=imperial")
-    .then(
-        (response) => {
-            console.log(response)
-            let temp = Math.ceil(Math.round(response.data.main.feels_like));
-             this.setState({
-                weatherLike: temp,
-                humidity: response.data.main.humidity,
-                skies: response.data.weather[0].description,
-                city: response.data.name
-            })
-        }
-      )
+    let userZip = event.target.children[0].value;
+    console.log(userZip.length);
+    if (userZip.length === 5){
+      axios
+      .get("https://api.openweathermap.org/data/2.5/weather?zip="+this.state.zipcode+"&appid=cb62c3b0bbf4bc98a92507bb71fa55d5&units=imperial")
+      .then(
+          (response) => {
+            if(response){
+              console.log(response)
+            }
+            else {
+              alert('bad zipcode')
+            }
+              let temp = Math.ceil(Math.round(response.data.main.feels_like));
+               this.setState({
+                  weatherLike: temp,
+                  humidity: response.data.main.humidity,
+                  skies: response.data.weather[0].description,
+                  city: response.data.name
+              })
+          }
+        )
+      } else {
+        alert("Zipcode must be 5 digits long")
+      }
     }
 
     render() {
