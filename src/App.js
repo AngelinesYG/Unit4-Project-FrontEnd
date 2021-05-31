@@ -87,22 +87,24 @@ class App extends React.Component {
                 <HeroArea
                     addDog={this.addDog}
                     id="add"/>
-                <div id="dogs-container">
-                    {this.state.dogs.map((dog) => {
-                      return(
-                        <DogProf dog={dog}
-                          updateDog={this.updateDog}
-                          deleteDog={this.deleteDog}
-                          handleChange={this.handleChange}
-                          />
-                      )
-                    })}
+                <div className="smaller-width">
+                    <div id="dogs-container">
+                        {this.state.dogs.map((dog) => {
+                          return(
+                            <DogProf dog={dog}
+                              updateDog={this.updateDog}
+                              deleteDog={this.deleteDog}
+                              handleChange={this.handleChange}
+                              />
+                          )
+                        })}
+                    </div>
+                    <Weather
+                        id="weather"
+                        handleChange={this.handleChange}/>
+                    <Map
+                        handleChange={this.handleChange}/>
                 </div>
-                <Weather
-                    id="weather"
-                    handleChange={this.handleChange}/>
-                <Map
-                    handleChange={this.handleChange}/>
                 <Footer />
             </div>
         )
