@@ -18,10 +18,10 @@ class Map extends React.Component {
 
     render() {
         return (
-            <div className="map-container">
+            <div className="map-container" id="map-container">
                 <h2>Local Dog Parks</h2>
                 <form onSubmit={this.generateIframeSrc}>
-                    <input type="text" placeholder="zipcode" onChange={this.props.handleChange}/><br />
+                    <input type="text" placeholder="zip or city name" onChange={this.props.handleChange}/><br />
                     <input type="submit" value="find dog parks!" />
                 </form>
                 <iframe width="600" height="450" loading="lazy" allowfullscreen frameBorder="0" src={this.state.iframeSrc}></iframe>
@@ -31,16 +31,6 @@ class Map extends React.Component {
 }
 
 export default Map
-
-// generateIframeSrc = (event) => {
-//     event.preventDefault()
-//     let userInput = event.target.children[0].value
-//     let localMapUrl = "https://www.google.com/maps/embed/v1/search?q=dog%20park%20near%20" + `${userInput}` + "%2C%20MA%2C%20USA&key=AIzaSyBFvU905wVMfSfWkWW1_8xOGAe-SX-Ea3A"
-//     console.log(localMapUrl);
-//     this.setState({
-//         iframeSrc: localMapUrl
-//     })
-// }
 
 
 /*====================== react-map-gl attempt =====================*/
