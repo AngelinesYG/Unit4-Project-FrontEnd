@@ -74,8 +74,7 @@ Thankfully, we were able to figure it out before lunch on the second day.
 *WIREFRAMES
 ============
 
-![AdobeXD Wireframe](https://imgur.com/RYhVid6)
+![AdobeXD Wireframe](https://i.imgur.com/RYhVid6.jpg)
 ![Paper Mobile Wireframe](https://imgur.com/br50xOZ)
 ![Paper Tablet Wireframe](https://imgur.com/Nw1oGTK)
 ![Paper Desktop Wireframe](https://imgur.com/3K6Yc8X)
-[Imgur](https://i.imgur.com/3K6Yc8X.jpg)
