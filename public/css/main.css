@@ -282,13 +282,25 @@ button:hover, input[type="submit"]:hover {
 
 /*----- Every element in this section should begin with '.map-container' -----*/
 
-/* .map {
-    display: none;
+.map-container div {
+    text-align: center;
 }
 
-.visible {
-    display: block;
-} */
+iframe {
+    width: 100%;
+    border: 3px solid var(--sunrise);
+}
+
+.map-container input[type="text"] {
+    border: 1px solid var(--brick);
+    outline-color: var(--sunrise);
+    height: 25px;
+    margin: 10px auto;
+}
+
+.map-container input[type="submit"] {
+    margin: 0px 0px 10px 0px;
+}
 
 /*=========================================================
 ==================== FOOTER COMPONENT CSS ==================*/

@@ -35,12 +35,6 @@ class App extends React.Component {
     .catch((error) => console.error(error))
   }
 
-  // handleChange = (event) => {
-  //   this.setState ({
-  //     [event.target.id]: event.target.value,
-  //   })
-  // }
-
   handleChange = (event) => {
     if (event.target.id === "favGames") {
         this.setState({
@@ -106,6 +100,8 @@ class App extends React.Component {
                 </div>
                 <Weather
                     id="weather"
+                    handleChange={this.handleChange}/>
+                <Map
                     handleChange={this.handleChange}/>
                 <Footer />
             </div>
