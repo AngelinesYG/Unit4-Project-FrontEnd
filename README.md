@@ -44,7 +44,7 @@ We fixed the issues encoutered by doing reasearch and looking at the console, te
 
 We also learned more about fixing merge conflicts and how to deal with them, as well as how to improve our team working skills and communication.
 
-###Integrating Google Maps
+##Integrating Google Maps
 
 We ran into a lot of issues rendering a dynamic map that would update based on the state of the component. Eventually, what worked was the following:
 
@@ -70,3 +70,11 @@ Thankfully, we were able to figure it out before lunch on the second day.
 - We are very aware of how much thought can and should go into database design! Even something as simple as wanting to change one of our model's fields from "IntegerField" to a field that accepts decimals feels like a lot of backtracking. Would this invalidate all the data we'd already built?
 - We would consider some front end design elements differently, like incorporating the weather and map information into one component that would only require the user to enter their zip code once.
 - We were unsure of how to navigate some privacy issues with API keys getting pushed to GitHub.
+
+*WIREFRAMES
+============
+
+![AdobeXD Wireframe](https://i.imgur.com/RYhVid6.jpg)
+![Paper Mobile Wireframe](https://i.imgur.com/br50xOZ.jpg)
+![Paper Tablet Wireframe](https://i.imgur.com/Nw1oGTK.jpg)
+![Paper Desktop Wireframe](https://i.imgur.com/3K6Yc8X.jpg)
