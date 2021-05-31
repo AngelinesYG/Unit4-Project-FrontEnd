@@ -75,6 +75,6 @@ Thankfully, we were able to figure it out before lunch on the second day.
 ============
 
 ![AdobeXD Wireframe](https://i.imgur.com/RYhVid6.jpg)
-![Paper Mobile Wireframe](https://imgur.com/br50xOZ)
-![Paper Tablet Wireframe](https://imgur.com/Nw1oGTK)
-![Paper Desktop Wireframe](https://imgur.com/3K6Yc8X)
+![Paper Mobile Wireframe](https://i.imgur.com/br50xOZ.jpg)
+![Paper Tablet Wireframe](https://i.imgur.com/Nw1oGTK.jpg)
+![Paper Desktop Wireframe](https://i.imgur.com/3K6Yc8X.jpg)
