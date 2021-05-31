@@ -2,6 +2,8 @@ import React from 'react'
 
 import axios from 'axios'
 
+import {TinyButton as ScrollUpButton} from 'react-scroll-up-button'
+
 import Nav from './components/Nav'
 import HeroArea from './components/HeroArea'
 import DogProf from './components/DogProf'
@@ -84,6 +86,7 @@ class App extends React.Component {
         return (
             <div className="main-container">
                 <Nav />
+                <ScrollUpButton />
                 <HeroArea
                     addDog={this.addDog}
                     id="add"/>
