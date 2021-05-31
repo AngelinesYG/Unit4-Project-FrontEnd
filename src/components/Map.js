@@ -1,35 +1,92 @@
+import React from 'react'
+import axios from 'axios'
+
+class Map extends React.Component {
+    state = {
+        iframeSrc: ''
+    }
+
+    // queryMap = () => {
+    //     axios
+    //     .get("https://www.google.com/maps/embed/v1/search?q=dog%20park%20near%20Boston%2C%20MA%2C%20USA&key=AIzaSyBFvU905wVMfSfWkWW1_8xOGAe-SX-Ea3A")
+    //     .then(
+    //         (response) => {
+    //             console.log(response)
+    //         }
+    //     )
+    // }
+
+    generateIframeSrc = (event) => {
+        event.preventDefault()
+        let userInput = event.target.children[0].value
+        let localMapUrl = "https://www.google.com/maps/embed/v1/search?q=dog%20park%20near%20" + `${userInput}` + "%20USA&key=AIzaSyBFvU905wVMfSfWkWW1_8xOGAe-SX-Ea3A"
+        console.log(localMapUrl);
+        this.setState({
+            iframeSrc: localMapUrl
+        })
+    }
+
+    render() {
+        return (
+            <div>
+                <h1>This is the map component</h1>
+                <form onSubmit={this.generateIframeSrc}>
+                    <input type="text" onChange={this.props.handleChange}/>
+                    <input type="submit" value="Enter Zip" />
+                </form>
+                <iframe width="600" height="450" loading="lazy" allowfullscreen src={this.state.iframeSrc}></iframe>
+            </div>
+        )
+    }
+}
+
+export default Map
+
+// generateIframeSrc = (event) => {
+//     event.preventDefault()
+//     let userInput = event.target.children[0].value
+//     let localMapUrl = "https://www.google.com/maps/embed/v1/search?q=dog%20park%20near%20" + `${userInput}` + "%2C%20MA%2C%20USA&key=AIzaSyBFvU905wVMfSfWkWW1_8xOGAe-SX-Ea3A"
+//     console.log(localMapUrl);
+//     this.setState({
+//         iframeSrc: localMapUrl
+//     })
+// }
+
+
 /*====================== react-map-gl attempt =====================*/
 /* video tutorial: https://www.youtube.com/watch?v=JJatzkPcmoI */
 
-import React, { useState } from 'react'
-import ReactMapGl, {Marker} from "react-map-gl"
+// import React, { useState } from 'react'
+// import ReactMapGl, {Marker} from "react-map-gl"
+//
+// export default function MapContainer() {
+//     const [viewport, setViewport] = useState(
+//         {
+//             latitude: 42.361145,
+//             longitude: -71.057083,
+//             width: '89vw',
+//             height: '100vh',
+//             zoom: 10
+//         }
+//     )
+//
+//     return <div>
+//         <ReactMapGl
+//             {...viewport}
+//             mapboxApiAccessToken="pk.eyJ1IjoiY2hlaXNlbnRyb3V0IiwiYSI6ImNrcDhmMTBxZjA2Mm4yb25yY2syZGUwYjkifQ.yI_yCIEk17ky3XHOdWQOgg"
+//             mapStyle="mapbox://styles/cheisentrout/ckp8h9dgj1zde18low6azf99y"
+//             onViewportChange={viewport => {
+//                 setViewport(viewport);
+//             }}
+//             >
+//             markers here
+//         </ReactMapGl>
+//     </div>
+// }
 
-export default function MapContainer() {
-    const [viewport, setViewport] = useState(
-        {
-            latitude: 42.361145,
-            longitude: -71.057083,
-            width: '89vw',
-            height: '100vh',
-            zoom: 10
-        }
-    )
-
-    return <div>
-        <ReactMapGl
-            {...viewport}
-            mapboxApiAccessToken="pk.eyJ1IjoiY2hlaXNlbnRyb3V0IiwiYSI6ImNrcDhmMTBxZjA2Mm4yb25yY2syZGUwYjkifQ.yI_yCIEk17ky3XHOdWQOgg"
-            mapStyle="mapbox://styles/cheisentrout/ckp8h9dgj1zde18low6azf99y"
-            onViewportChange={viewport => {
-                setViewport(viewport);
-            }}
-            >
-            markers here
-        </ReactMapGl>
-    </div>
-}
-
-
+// have a form that updates the state of the component
+// have a function that creates a url with the setState
+// have an iframe that renders with the src attribute
 
 /*====================== react-google-maps attempt =====================*/
 
