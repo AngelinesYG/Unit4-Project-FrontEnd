@@ -18,6 +18,10 @@ body {
 }
 
 .main-container {
+    margin: auto;
+}
+
+.smaller-width {
     width: 90%;
     margin: auto;
 }
@@ -54,6 +58,11 @@ button:hover, input[type="submit"]:hover {
 ==================== NAV COMPONENT CSS ==================*/
 
 /*----- Every element in this section should begin with '.nav-container' -----*/
+
+.nav-container div {
+    position: fixed;
+    top: 0;
+}
 
 .nav-container nav {
     background: var(--mistblue);
@@ -151,29 +160,22 @@ button:hover, input[type="submit"]:hover {
 /*=========================================================
 ================== DOGPROF COMPONENT CSS =================*/
 
-/*----- Every element in this section should begin with '.dogprof-container' -----*/
-
-.dogprof-container {
+#dogs-container {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
 }
 
-.dogprof-container article {
-    width: 30%;
-    max-width: 300px;
+#dogs-container article {
+    min-width: 300px;
+    border: 3px solid var(--sunrise);
+    border-radius: 10px;
+    background: #d0e2de5e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
-}
-
-.dogprof-container section {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-}
-
-.intro-text {
-    display: flex;
-    justify-content: space-between;
+    margin: 10px;
 }
 
 .dog-intro img {
@@ -182,6 +184,55 @@ button:hover, input[type="submit"]:hover {
     min-width: 200px;
     min-height: 200px;
     object-fit: cover;
+    border-radius: 10px;
+}
+
+.dog-intro {
+    background: var(--mistblue);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+#dog-name {
+    color: var(--brick);
+}
+
+.intro-text {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#dogs-container p, #dogs-container ul {
+    align-self: flex-start;
+}
+
+#dogs-container span {
+    font-weight: bold;
+}
+
+#dogs-container summary {
+    color: var(--brick);
+    transition: .3s;
+    margin-bottom: 5px;
+}
+
+#dogs-container summary:hover {
+    color: var(--sunrise);
+}
+
+#dogs-container input[type="text"] {
+    margin: 5px auto;
+}
+
+#del-btn {
+    margin: 10px auto;
+    background: #e6b6894f;
+}
+
+#del-btn:hover {
+    background: var(--brick);
+    color: var(--lightgray);
 }
 
 /*=========================================================
@@ -211,6 +262,7 @@ button:hover, input[type="submit"]:hover {
 
 .weather-container h2 {
     margin-top: 0;
+    text-shadow: none;
 }
 
 .weather-container h3 {
@@ -240,13 +292,39 @@ button:hover, input[type="submit"]:hover {
 
 /*----- Every element in this section should begin with '.map-container' -----*/
 
-/* .map {
-    display: none;
+#map-container {
+    text-align: center;
+    border: 2px solid var(--mint);
+    border-radius: 10px;
+    background: #e6b6894f;
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
-.visible {
-    display: block;
-} */
+#map-container h2 {
+    margin-top: 0;
+}
+
+iframe {
+    width: 100%;
+    border: 3px solid var(--sunrise);
+    border-radius: 10px;
+}
+
+.map-container input {
+    min-width: 200px;
+    margin: 5px auto;
+}
+
+.map-container input[type="text"] {
+    border: 1px solid var(--brick);
+    outline-color: var(--sunrise);
+    height: 25px;
+}
+
+.map-container input[type="submit"] {
+    margin-bottom: 20px;
+}
 
 /*=========================================================
 ==================== FOOTER COMPONENT CSS ==================*/

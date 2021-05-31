@@ -37,10 +37,10 @@ class HeroArea extends React.Component {
 
     render(){
         return (
-            <div className="heroarea-container" onClick={this.showForm}>
+            <div className="heroarea-container" id="heroarea-container">
                 <div className="welcome-text">
                     <h1>Welcome to bingo!</h1>
-                    <button>add your bff</button>
+                    <button onClick={this.showForm}>add your bff</button>
                 </div>
                 <form className="addForm" onSubmit={this.handleSubmit}>
                   <label htmlFor="name">Name:</label><br />
@@ -99,7 +99,10 @@ class HeroArea extends React.Component {
                       onChange={this.handleChange}
                   />
                   <br />
-                  <input type="submit" value="Add New Best Friend"/>
+                  <input
+                    type="submit"
+                    value="Add New Best Friend"
+                    onClick={this.showForm}/>
                </form>
             </div>
         )

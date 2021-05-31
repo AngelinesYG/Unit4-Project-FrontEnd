@@ -35,12 +35,6 @@ class App extends React.Component {
     .catch((error) => console.error(error))
   }
 
-  // handleChange = (event) => {
-  //   this.setState ({
-  //     [event.target.id]: event.target.value,
-  //   })
-  // }
-
   handleChange = (event) => {
     if (event.target.id === "favGames") {
         this.setState({
@@ -93,20 +87,24 @@ class App extends React.Component {
                 <HeroArea
                     addDog={this.addDog}
                     id="add"/>
-                <div className="dogs-container">
-                    {this.state.dogs.map((dog) => {
-                      return(
-                        <DogProf dog={dog}
-                          updateDog={this.updateDog}
-                          deleteDog={this.deleteDog}
-                          handleChange={this.handleChange}
-                          />
-                      )
-                    })}
+                <div className="smaller-width">
+                    <div id="dogs-container">
+                        {this.state.dogs.map((dog) => {
+                          return(
+                            <DogProf dog={dog}
+                              updateDog={this.updateDog}
+                              deleteDog={this.deleteDog}
+                              handleChange={this.handleChange}
+                              />
+                          )
+                        })}
+                    </div>
+                    <Weather
+                        id="weather"
+                        handleChange={this.handleChange}/>
+                    <Map
+                        handleChange={this.handleChange}/>
                 </div>
-                <Weather
-                    id="weather"
-                    handleChange={this.handleChange}/>
                 <Footer />
             </div>
         )
