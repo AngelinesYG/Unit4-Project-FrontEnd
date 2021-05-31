@@ -5,7 +5,7 @@ class Weather extends React.Component {
 
   state = {
       zipcode: '',
-      name: '',
+      city: '',
       weatherLike: '',
       humidity: '',
       skies: ''
@@ -19,44 +19,71 @@ class Weather extends React.Component {
 
   getWeather = (event) => {
     event.preventDefault();
-    axios
-    .get("https://api.openweathermap.org/data/2.5/weather?zip="+this.state.zipcode+"&appid=cb62c3b0bbf4bc98a92507bb71fa55d5&units=imperial")
-    .then(
-        (response) => {
-            console.log(response)
-            let temp = Math.ceil(Math.round(response.data.main.feels_like));
-             this.setState({
-                weatherLike: temp,
-                humidity: response.data.main.humidity,
-                skies: response.data.weather[0].description,
-                city: response.data.name
-            })
-        }
-      )
+    let userZip = event.target.children[0].value;
+    console.log(userZip.length);
+    if (userZip.length === 5){
+      axios
+      .get("https://api.openweathermap.org/data/2.5/weather?zip="+this.state.zipcode+"&appid=cb62c3b0bbf4bc98a92507bb71fa55d5&units=imperial")
+      .then(
+          (response) => {
+            if(response){
+              console.log(response)
+            }
+            else {
+              alert('bad zipcode')
+            }
+              let temp = Math.ceil(Math.round(response.data.main.feels_like));
+               this.setState({
+                  weatherLike: temp,
+                  humidity: response.data.main.humidity,
+                  skies: response.data.weather[0].description,
+                  city: response.data.name
+              })
+          }
+        )
+      } else {
+        alert("Zipcode must be 5 digits long")
+      }
     }
 
     render() {
+      if (this.state.city === "") {
         return (
-            <div className ="Weather">
-                <h1>Weather Component</h1>
-                <summary> Wheather Check </summary>
-            <form onSubmit={this.getWeather}>
-                <input type="text" id="zipcode" onChange={this.handleChange}/><br/>
-                <input type="submit" value = "Enter ZipCode!" />
-            </form>
-            <dl>
-                <dt> City: </dt>
-                <dd>{this.state.city}</dd>
-                <dt> Current Condition: </dt>
-                <dd>{this.state.skies}</dd>
-                <dt> Temperature: </dt>
-                <dd>{this.state.weatherLike}</dd>
-                <dt> Humidity: </dt>
-                <dd>{this.state.humidity}</dd>
-            </dl>
+            <div className ="weather-container" id="weather-container">
+                <h2> Local Weather </h2>
+                <form onSubmit={this.getWeather}>
+                    <input type="text" id="zipcode" onChange={this.handleChange}/><br/>
+                    <input type="submit" value = "Enter ZipCode!" />
+                </form>
             </div>
         )
+      }
+      else {
+        return (
+          <div className ="weather-container" id="weather-container">
+              <h2> Local Weather </h2>
+              <form onSubmit={this.getWeather}>
+                  <input type="text" id="zipcode" onChange={this.handleChange}/><br/>
+                  <input type="submit" value = "Enter ZipCode!" />
+              </form>
+              <h3>The weather in {this.state.city} looks like:</h3>
+              <section>
+                <div className="dashboard">
+                  <h5>Condition:</h5>
+                  <h3>{this.state.skies}</h3>
+                </div>
+                <div className="dashboard">
+                  <h5>Temperature:</h5>
+                  <h3>{this.state.weatherLike}°</h3>
+                </div>
+                <div className="dashboard">
+                  <h5>Humidity:</h5>
+                  <h3>{this.state.humidity}%</h3>
+                </div>
+              </section>
+          </div>
+        )
+      }
     }
 }
-
 export default Weather
