@@ -70,3 +70,8 @@ Thankfully, we were able to figure it out before lunch on the second day.
 - We are very aware of how much thought can and should go into database design! Even something as simple as wanting to change one of our model's fields from "IntegerField" to a field that accepts decimals feels like a lot of backtracking. Would this invalidate all the data we'd already built?
 - We would consider some front end design elements differently, like incorporating the weather and map information into one component that would only require the user to enter their zip code once.
 - We were unsure of how to navigate some privacy issues with API keys getting pushed to GitHub.
+
+*WIREFRAMES
+============
+
+(./public/img/adobe-mobile-wireframe.pdf)
