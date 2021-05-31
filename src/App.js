@@ -93,7 +93,7 @@ class App extends React.Component {
                 <HeroArea
                     addDog={this.addDog}
                     id="add"/>
-                <div className="dogs-container">
+                <div id="dogs-container">
                     {this.state.dogs.map((dog) => {
                       return(
                         <DogProf dog={dog}

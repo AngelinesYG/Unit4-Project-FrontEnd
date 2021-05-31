@@ -151,29 +151,22 @@ button:hover, input[type="submit"]:hover {
 /*=========================================================
 ================== DOGPROF COMPONENT CSS =================*/
 
-/*----- Every element in this section should begin with '.dogprof-container' -----*/
-
-.dogprof-container {
+#dogs-container {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
 }
 
-.dogprof-container article {
-    width: 30%;
-    max-width: 300px;
+#dogs-container article {
+    min-width: 300px;
+    border: 3px solid var(--sunrise);
+    border-radius: 10px;
+    background: #d0e2de5e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
-}
-
-.dogprof-container section {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-}
-
-.intro-text {
-    display: flex;
-    justify-content: space-between;
+    margin: 10px;
 }
 
 .dog-intro img {
@@ -182,6 +175,55 @@ button:hover, input[type="submit"]:hover {
     min-width: 200px;
     min-height: 200px;
     object-fit: cover;
+    border-radius: 10px;
+}
+
+.dog-intro {
+    background: var(--mistblue);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+#dog-name {
+    color: var(--brick);
+}
+
+.intro-text {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#dogs-container p, #dogs-container ul {
+    align-self: flex-start;
+}
+
+#dogs-container span {
+    font-weight: bold;
+}
+
+#dogs-container summary {
+    color: var(--brick);
+    transition: .3s;
+    margin-bottom: 5px;
+}
+
+#dogs-container summary:hover {
+    color: var(--sunrise);
+}
+
+#dogs-container input[type="text"] {
+    margin: 5px auto;
+}
+
+#del-btn {
+    margin: 10px auto;
+    background: #e6b6894f;
+}
+
+#del-btn:hover {
+    background: var(--brick);
+    color: var(--lightgray);
 }
 
 /*=========================================================
