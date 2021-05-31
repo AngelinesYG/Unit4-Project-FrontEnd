@@ -44,7 +44,7 @@ We fixed the issues encoutered by doing reasearch and looking at the console, te
 
 We also learned more about fixing merge conflicts and how to deal with them, as well as how to improve our team working skills and communication.
 
-###Integrating Google Maps
+##Integrating Google Maps
 
 We ran into a lot of issues rendering a dynamic map that would update based on the state of the component. Eventually, what worked was the following:
 
