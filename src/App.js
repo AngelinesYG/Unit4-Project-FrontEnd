@@ -107,12 +107,11 @@ class App extends React.Component {
                 <Weather
                     id="weather"
                     handleChange={this.handleChange}/>
-// <<<<<<< HEAD
-//                 <MapContainer
-//                     id="map"
-//                     handleChange={this.handleChange}/>
-// =======
-// >>>>>>> 5a80a25c7d281a32f31e1c88ccc176d5df82cddc
+
+                <MapContainer
+                    id="map"
+                    handleChange={this.handleChange}/>
+
                 <Footer />
             </div>
         )

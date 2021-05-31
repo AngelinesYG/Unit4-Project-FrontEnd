@@ -17,6 +17,7 @@
     "react-map-gl": "^6.1.15",
     "react-places-autocomplete": "^7.3.0",
     "react-scripts": "4.0.3",
+    "react-scroll-up-button": "^1.6.4",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
