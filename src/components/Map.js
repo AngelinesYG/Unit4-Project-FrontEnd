@@ -1,49 +1,49 @@
-/*====================== react-map-gl attempt =====================*/
-<<<<<<< HEAD
-
-import React, { useState } from 'react'
-import ReactMapGl from "react-map-gl"
-=======
-/* video tutorial: https://www.youtube.com/watch?v=JJatzkPcmoI */
-
-import React, { useState } from 'react'
-import ReactMapGl, {Marker} from "react-map-gl"
->>>>>>> 5a80a25c7d281a32f31e1c88ccc176d5df82cddc
-
-export default function MapContainer() {
-    const [viewport, setViewport] = useState(
-        {
-            latitude: 42.361145,
-            longitude: -71.057083,
-<<<<<<< HEAD
-            width: '100vw',
-=======
-            width: '89vw',
->>>>>>> 5a80a25c7d281a32f31e1c88ccc176d5df82cddc
-            height: '100vh',
-            zoom: 10
-        }
-    )
-
-    return <div>
-        <ReactMapGl
-            {...viewport}
-<<<<<<< HEAD
-            mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}>
-=======
-            mapboxApiAccessToken="pk.eyJ1IjoiY2hlaXNlbnRyb3V0IiwiYSI6ImNrcDhmMTBxZjA2Mm4yb25yY2syZGUwYjkifQ.yI_yCIEk17ky3XHOdWQOgg"
-            mapStyle="mapbox://styles/cheisentrout/ckp8h9dgj1zde18low6azf99y"
-            onViewportChange={viewport => {
-                setViewport(viewport);
-            }}
-            >
->>>>>>> 5a80a25c7d281a32f31e1c88ccc176d5df82cddc
-            markers here
-        </ReactMapGl>
-    </div>
-}
-
-
+// /*====================== react-map-gl attempt =====================*/
+// <<<<<<< HEAD
+//
+// import React, { useState } from 'react'
+// import ReactMapGl from "react-map-gl"
+// =======
+// /* video tutorial: https://www.youtube.com/watch?v=JJatzkPcmoI */
+//
+// import React, { useState } from 'react'
+// import ReactMapGl, {Marker} from "react-map-gl"
+// >>>>>>> 5a80a25c7d281a32f31e1c88ccc176d5df82cddc
+//
+// export default function MapContainer() {
+//     const [viewport, setViewport] = useState(
+//         {
+//             latitude: 42.361145,
+//             longitude: -71.057083,
+// <<<<<<< HEAD
+//             width: '100vw',
+// =======
+//             width: '89vw',
+// >>>>>>> 5a80a25c7d281a32f31e1c88ccc176d5df82cddc
+//             height: '100vh',
+//             zoom: 10
+//         }
+//     )
+//
+//     return <div>
+//         <ReactMapGl
+//             {...viewport}
+// <<<<<<< HEAD
+//             mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}>
+// =======
+//             mapboxApiAccessToken="pk.eyJ1IjoiY2hlaXNlbnRyb3V0IiwiYSI6ImNrcDhmMTBxZjA2Mm4yb25yY2syZGUwYjkifQ.yI_yCIEk17ky3XHOdWQOgg"
+//             mapStyle="mapbox://styles/cheisentrout/ckp8h9dgj1zde18low6azf99y"
+//             onViewportChange={viewport => {
+//                 setViewport(viewport);
+//             }}
+//             >
+// >>>>>>> 5a80a25c7d281a32f31e1c88ccc176d5df82cddc
+//             markers here
+//         </ReactMapGl>
+//     </div>
+// }
+//
+//
 
 /*====================== react-google-maps attempt =====================*/
 
