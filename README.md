@@ -74,4 +74,4 @@ Thankfully, we were able to figure it out before lunch on the second day.
 *WIREFRAMES
 ============
 
-(./public/img/adobe-mobile-wireframe.pdf)
+![AdobeXD Wireframe](./public/img/adobe-mobile-wireframe.pdf)
