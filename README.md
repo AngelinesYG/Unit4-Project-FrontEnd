@@ -74,5 +74,5 @@ Thankfully, we were able to figure it out before lunch on the second day.
 *WIREFRAMES
 ============
 
-![AdobeXD Wireframe](./public/img/adobe-mobile-wireframe.pdf)
+![AdobeXD Wireframe](./public/img/mobile-wireframe.jpg)
 ![Dog](https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZG9nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60)
