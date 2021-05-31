@@ -12,7 +12,7 @@ Clare Eisentrout
 - Python / Django Back End
 - PostgreSQL
 - React App Front End
-- Custom CSS 
+- Custom CSS
 
 *WORK FLOW
 =================
@@ -32,15 +32,25 @@ In addition to working on different components, we divided the research process 
 ========================
 Setting up all the date proved to be extremely challenging. We followed the directions to make two separate repos on GitHub before cloning the repos, but that resulted in bad file structures that were one level too deep, which caused issues when connecting to the servers, and then we weren't' sure how to connect them to each other.
 
-In addition, though deploying to heroku wasn't as difficult as we thought it would be (once our connection and server issues were solved that is), we ran into some major issues because we had to write a custom handleChange function to accommodate the fact that some of our form data was meant to render as a string and another part was meant to render as an array. We had to write a conditional that could handle the array input so that our data could read and parse the input. Before this conditional, we were able to see the changes happen live on the React Component console, but they would not render, so it took us a little while to figure out and solve.
+In addition, though deploying to Heroku wasn't as difficult as we thought it would be (once our connection and server issues were solved that is), we ran into some major issues because we had to write a custom handleChange function to accommodate the fact that some of our form data was meant to render as a string and another part was meant to render as an array. We had to write a conditional that could handle the array input so that our data could read and parse the input. Before this conditional, we were able to see the changes happen live on the React Component console, but they would not render, so it took us a little while to figure out and solve.
 
 We also had a few merge conflicts, nothing too crazy, which were mostly due to the mix up in file structure at first, and one or two others due to two of us trying to figure out an error on a file that one of us had worked on and accidentally made a change.
+
+We wanted to incorporate a component that would query a third-party maps API and display local dog parks based on a user's zipcode or city name. We tried several different methods to achieve this, including the react-google-maps package, and a "Mapbox" package from Uber. Neither of these packages was easy for us to understand, and neither seemed designed to produce the component we wanted. Eventually, we decided to build something from scratch.
 
 *HOW PROBLEMS WERE FIXED
 ===========================
 We fixed the issues encoutered by doing reasearch and looking at the console, terminal, and React Components console. We also posted messages in the sos channel and asked some of our peers. However, we are actually  quite proud of ourselves because though we received some help from our peers, we were able to solve most of the issue on our own and actually learned from them.
 
 We also learned more about fixing merge conflicts and how to deal with them, as well as how to improve our team working skills and communication.
+
+###Integrating Google Maps
+
+We ran into a lot of issues rendering a dynamic map that would update based on the state of the component. Eventually, what worked was the following:
+
+- We used the Embed Google Maps Quickstart page to generate a URL that would show "dog parks near Boston, MA".
+- Once we had this URL, we were able write a component method that would interpolate user input (in the form of a zipcode or a city name) into a variable called "localMapUrl", replacing the "Boston, MA" parameters.
+- Finally, the method updates the state of the Map component to reflect the localMapUrl in the rendered iframe src attribute. A dynamic map!
 
 *WHAT WENT WELL
 ====================
@@ -56,3 +66,7 @@ Thankfully, we were able to figure it out before lunch on the second day.
 
 *WHAT WOULD HAVE BEEN IMPROVED IF HAD MORE TIME
 =================================================
+
+- We are very aware of how much thought can and should go into database design! Even something as simple as wanting to change one of our model's fields from "IntegerField" to a field that accepts decimals feels like a lot of backtracking. Would this invalidate all the data we'd already built?
+- We would consider some front end design elements differently, like incorporating the weather and map information into one component that would only require the user to enter their zip code once.
+- We were unsure of how to navigate some privacy issues with API keys getting pushed to GitHub.
