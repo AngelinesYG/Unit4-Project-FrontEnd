@@ -1,40 +1,30 @@
 import React from 'react'
-import axios from 'axios'
 
 class Map extends React.Component {
     state = {
-        iframeSrc: ''
+        iframeSrc: "https://www.google.com/maps/embed/v1/place?q=usa&key=AIzaSyBFvU905wVMfSfWkWW1_8xOGAe-SX-Ea3A"
     }
-
-    // queryMap = () => {
-    //     axios
-    //     .get("https://www.google.com/maps/embed/v1/search?q=dog%20park%20near%20Boston%2C%20MA%2C%20USA&key=AIzaSyBFvU905wVMfSfWkWW1_8xOGAe-SX-Ea3A")
-    //     .then(
-    //         (response) => {
-    //             console.log(response)
-    //         }
-    //     )
-    // }
 
     generateIframeSrc = (event) => {
         event.preventDefault()
         let userInput = event.target.children[0].value
         let localMapUrl = "https://www.google.com/maps/embed/v1/search?q=dog%20park%20near%20" + `${userInput}` + "%20USA&key=AIzaSyBFvU905wVMfSfWkWW1_8xOGAe-SX-Ea3A"
-        console.log(localMapUrl);
-        this.setState({
-            iframeSrc: localMapUrl
-        })
+        this.setState(
+            {
+                iframeSrc: localMapUrl
+            }
+        )
     }
 
     render() {
         return (
-            <div>
-                <h1>This is the map component</h1>
+            <div className="map-container">
+                <h2>Local Dog Parks</h2>
                 <form onSubmit={this.generateIframeSrc}>
-                    <input type="text" onChange={this.props.handleChange}/>
-                    <input type="submit" value="Enter Zip" />
+                    <input type="text" placeholder="zipcode" onChange={this.props.handleChange}/><br />
+                    <input type="submit" value="find dog parks!" />
                 </form>
-                <iframe width="600" height="450" loading="lazy" allowfullscreen src={this.state.iframeSrc}></iframe>
+                <iframe width="600" height="450" loading="lazy" allowfullscreen frameBorder="0" src={this.state.iframeSrc}></iframe>
             </div>
         )
     }
